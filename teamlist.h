@@ -15,6 +15,9 @@ public:
     explicit TeamList(QWidget *parent = 0);
     ~TeamList();
 
+private slots:
+    void on_pushButtonAddLogo_clicked();
+
 private:
     Ui::TeamList *ui;
 };

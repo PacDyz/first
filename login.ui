@@ -81,14 +81,14 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Login</string>
+           <string>Login:</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLineEdit" name="lineEditLogin">
           <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
+           <enum>QLineEdit::Normal</enum>
           </property>
          </widget>
         </item>
@@ -99,12 +99,16 @@
         <item>
          <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>Password</string>
+           <string>Password:</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEditPassword"/>
+         <widget class="QLineEdit" name="lineEditPassword">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

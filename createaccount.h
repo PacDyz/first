@@ -16,6 +16,8 @@ public:
 private slots:
     void on_pushButtonCreateAccount_clicked();
 
+    void on_checkBoxShowPassword_clicked(bool checked);
+
 private:
     Ui::CreateAccount *ui;
     //std::unique_ptr<LogIn> logIn;

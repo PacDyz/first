@@ -26,6 +26,7 @@ void LogIn::on_ButtonLogIn_clicked()
         }
         else
         {
+            ui->labelStatusLogIn->setStyleSheet("QLabel { font-style : italic; color : red; }");
             ui->labelStatusLogIn->setText("Wrong login or password");
         }
     }

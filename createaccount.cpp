@@ -26,3 +26,19 @@ void CreateAccount::on_pushButtonCreateAccount_clicked()
     else
         QMessageBox::critical(this, "Error", "Repeat password isn't the same like Password");
 }
+
+
+
+void CreateAccount::on_checkBoxShowPassword_clicked(bool checked)
+{
+    if(checked)
+    {
+        ui->lineEditPassword->setEchoMode(QLineEdit::Normal);
+        ui->lineEditRepeatPassword->setEchoMode(QLineEdit::Normal);
+    }
+    else
+    {
+        ui->lineEditPassword->setEchoMode(QLineEdit::Password);
+        ui->lineEditRepeatPassword->setEchoMode(QLineEdit::Password);
+    }
+}
