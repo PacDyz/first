@@ -29,16 +29,24 @@ SOURCES += \
         mainwindow.cpp \
     teamlist.cpp \
     login.cpp \
-    createaccount.cpp
+    createaccount.cpp \
+    newteam.cpp \
+    logototeam.cpp \
+    team.cpp
 
 HEADERS += \
         mainwindow.h \
     teamlist.h \
     login.h \
-    createaccount.h
+    createaccount.h \
+    logototeam.h \
+    newteam.h \
+    team.h
 
 FORMS += \
         mainwindow.ui \
     teamlist.ui \
     login.ui \
-    createaccount.ui
+    createaccount.ui \
+    newteam.ui \
+    logototeam.ui

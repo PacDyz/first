@@ -21,7 +21,7 @@ void LogIn::on_ButtonLogIn_clicked()
         if(itr.first == ui->lineEditLogin->text() && itr.second == ui->lineEditPassword->text())
         {
             hide();
-            mainWindow = std::make_unique<MainWindow>(this);
+            mainWindow = std::make_unique<MainWindow>(ui->lineEditLogin->text(), this);
             mainWindow->show();
         }
         else
