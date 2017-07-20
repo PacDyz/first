@@ -1,11 +1,24 @@
 #include "teamlist.h"
 #include "ui_teamlist.h"
 #include <QPixmap>
+#include <QTextStream>
+#include <QMessageBox>
 TeamList::TeamList(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::TeamList)
+    ui(new Ui::TeamList),
+    file(dir.currentPath() + "/team.txt")
 {
     ui->setupUi(this);
+    if(!file.open(QFile::ReadOnly | QFile::Text))
+        QMessageBox::warning(this, "Openning file", "File isn't open");
+    QTextStream in(&file);
+    while(!in.atEnd())
+    {
+        QString team = in.readLine();
+        ui->listWidgetTeam1->addItem(team);
+        ui->listWidgetTeam2->addItem(team);
+    }
+    file.close();
 }
 
 TeamList::~TeamList()
@@ -36,6 +49,11 @@ void TeamList::on_pushButtonAddTeam_clicked()
 
 void TeamList::addNewTeam(const Team&& team)
 {
+    QTextStream out(&file);
+    if(!file.open(QFile::WriteOnly | QFile::Append))
+        QMessageBox::warning(this, "Openning file", "File isn't open");
+    out << team.getName() << "\r\n";
+    file.close();
     teamsList.emplace_back(std::move(team));
  //   auto item = std::make_shared<QListWidgetItem>(teamsList.back().getName());
     ui->listWidgetTeam1->addItem(teamsList.back().getName());

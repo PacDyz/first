@@ -6,6 +6,8 @@
 #include <memory>
 #include "newteam.h"
 #include "team.h"
+#include <QFile>
+#include <QDir>
 class Team;
 namespace Ui {
 class TeamList;
@@ -34,6 +36,8 @@ private:
     std::unique_ptr<LogoToTeam> logoWindow;
     std::unique_ptr<NewTeam> newTeamWindow;
     std::vector<Team> teamsList;
+    QFile file;
+    QDir dir;
 };
 
 #endif // TEAMLIST_H
